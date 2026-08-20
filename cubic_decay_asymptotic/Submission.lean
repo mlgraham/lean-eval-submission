@@ -1,4 +1,9 @@
-import Mathlib
+import Mathlib.Analysis.ODE.Gronwall
+import Mathlib.Analysis.SpecialFunctions.Sqrt
+import Mathlib.Analysis.SpecialFunctions.Exp
+import Mathlib.Analysis.SpecificLimits.Basic
+import Mathlib.Analysis.Calculus.Deriv.Inv
+import Mathlib.Analysis.Calculus.Deriv.Comp
 import Submission.Helpers
 
 open Filter Topology Set
@@ -107,8 +112,8 @@ theorem cubic_decay_asymptotic (y : ℝ → ℝ) (hy_diff : ∀ t : ℝ, 0 < t �
       simpa using this
     have hexp : Tendsto (fun δ : ℝ => Real.exp (K * (t - δ))) (𝓝[>] (0:ℝ))
         (𝓝 (Real.exp (K * t))) := by
-      have hcont : Continuous fun δ : ℝ => Real.exp (K * (t - δ)) := by
-        continuity
+      have hcont : Continuous fun δ : ℝ => Real.exp (K * (t - δ)) :=
+        Real.continuous_exp.comp (continuous_const.mul (continuous_const.sub continuous_id))
       have := (hcont.tendsto 0).mono_left (nhdsWithin_le_nhds (s := Ioi (0:ℝ)))
       simpa using this
     have hεlim : Tendsto (fun δ => dist (y δ) (c δ) * Real.exp (K * (t - δ)))
