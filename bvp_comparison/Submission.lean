@@ -1,4 +1,6 @@
-import Mathlib
+import Mathlib.Analysis.Convex.Deriv
+import Mathlib.Analysis.Convex.Function
+import Mathlib.Analysis.Calculus.MeanValue
 import Submission.Helpers
 
 namespace Submission
