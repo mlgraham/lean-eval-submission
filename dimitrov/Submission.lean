@@ -7,6 +7,7 @@ import Submission.SqrtIntegrality
 import Submission.Hadamard
 import Submission.Kronecker
 import Submission.SymmetricIntegrality
+import Submission.ModFourCongruence
 
 namespace Submission
 
