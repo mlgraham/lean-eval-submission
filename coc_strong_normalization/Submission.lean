@@ -2,6 +2,7 @@ import ChallengeDeps
 
 import Submission.Helpers
 import Submission.Guards
+import Submission.SubjectReduction
 import ChallengeDeps
 /-!
 # Strong normalization for the calculus of constructions with universes
@@ -117,7 +118,8 @@ theorem step_polyId_app :
 
 /-- Types are preserved by reduction. -/
 theorem subject_reduction (Γ : List Tm) (t t' A : Tm) :
-    Typing Γ t A → Step t t' → Typing Γ t' A := sorry
+    Typing Γ t A → Step t t' → Typing Γ t' A :=
+  _root_.LeanEval.ProgramVerification.CoCStrongNormalization.subject_reduction Γ t t' A
 
 /-- Every well-typed term is strongly normalizing. -/
 theorem strong_normalization (Γ : List Tm) (t A : Tm) :
