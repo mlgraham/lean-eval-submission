@@ -4,6 +4,7 @@ import Lake.Util.Message
 import Lean
 import Submission.Helpers
 import Submission.SqrtIntegrality
+import Submission.Hadamard
 
 namespace Submission
 
