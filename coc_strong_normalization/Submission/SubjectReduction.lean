@@ -194,7 +194,7 @@ theorem subject_reduction' {Γ : List Tm} {t A : Tm} (h : Typing Γ t A) :
   · intro Γ t A B s _ hB hconv iht _ t' hs
     exact Typing.conv (iht _ hs) hB hconv
 
-theorem subject_reduction (Γ : List Tm) (t t' A : Tm) :
+theorem subject_reduction_thm (Γ : List Tm) (t t' A : Tm) :
     Typing Γ t A → Step t t' → Typing Γ t' A :=
   fun h hs => subject_reduction' h t' hs
 
