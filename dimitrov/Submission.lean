@@ -8,6 +8,7 @@ import Submission.Hadamard
 import Submission.Kronecker
 import Submission.SymmetricIntegrality
 import Submission.ModFourCongruence
+import Submission.SquaringLemma
 
 namespace Submission
 
