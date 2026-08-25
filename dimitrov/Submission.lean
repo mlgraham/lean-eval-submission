@@ -5,6 +5,7 @@ import Lean
 import Submission.Helpers
 import Submission.SqrtIntegrality
 import Submission.Hadamard
+import Submission.Kronecker
 
 namespace Submission
 
